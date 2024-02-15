@@ -16,17 +16,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from contactus.view import view
+from Contactus import views
+
+
+
 
 urlpatterns = [
-     path("Aboutus/", include("Aboutus.urls")),
-      path("Blog/", include("Blog.urls")),
-       path("Gallery/", include("Gallery.urls")),
-        path("Home/", include("Home.urls")),
-         path("Maps/", include("Maps.urls")),
-          path("Products/", include("Products.urls")),
-          path("Aboutus/", include("Aboutus.urls")),
-         
-          
-    path('admin/', admin.site.urls),
+     path("About-us/", include("Aboutus.urls")),
+     path("Blog/", include("Blog.urls")),
+     path("Galler/", include("Gallery.urls")),
+     path("", include("Home.urls")),
+     path("Maps", include("Maps.urls")),
+     path("Products/", include("Products.urls")),
+    #  path("Contactus/", include("Contactus.urls")),
+     path("Services/", include("Services.urls")),
+     path('contact-us/', views.Contactus, name='Contactus'),
+     path('admin/', admin.site.urls),
 ]
+
+ 
